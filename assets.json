@@ -1,15 +1,15 @@
 {
-  "vendors.js": "/static/js/vendors.8f0183f3.js",
-  "vendors.js.map": "/static/js/vendors.9bbaed6cec5f36c7988f.js.map",
-  "app.js": "/static/js/app.8248403d.js",
-  "app.js.map": "/static/js/app.9bbaed6cec5f36c7988f.js.map",
-  "index.js": "/static/js/index.2f615cbe.js",
-  "index.js.map": "/static/js/index.9bbaed6cec5f36c7988f.js.map",
-  "library-tab-bar-component.js": "/static/js/library-tab-bar-component.15754f9c.js",
-  "library-tab-bar-component.js.map": "/static/js/library-tab-bar-component.9bbaed6cec5f36c7988f.js.map",
-  "runtime~app.js": "/static/js/runtime~app.9bbaed6cec5f36c7988f.js",
-  "runtime~app.js.map": "/static/js/runtime~app.9bbaed6cec5f36c7988f.js.map",
-  "static/js/5.cecc34ff.js": "/static/js/5.cecc34ff.js",
-  "static/js/5.9bbaed6cec5f36c7988f.js.map": "/static/js/5.9bbaed6cec5f36c7988f.js.map",
-  "index.html": "/index.html"
+  "vendors.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/vendors.8f9373e3.js",
+  "vendors.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/vendors.97cbd454ee60ebd9cac0.js.map",
+  "app.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/app.3f2f8ddb.js",
+  "app.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/app.97cbd454ee60ebd9cac0.js.map",
+  "index.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/index.2f615cbe.js",
+  "index.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/index.97cbd454ee60ebd9cac0.js.map",
+  "library-tab-bar-component.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.15754f9c.js",
+  "library-tab-bar-component.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.97cbd454ee60ebd9cac0.js.map",
+  "runtime~app.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/runtime~app.97cbd454ee60ebd9cac0.js",
+  "runtime~app.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/runtime~app.97cbd454ee60ebd9cac0.js.map",
+  "static/js/5.cecc34ff.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/5.cecc34ff.js",
+  "static/js/5.97cbd454ee60ebd9cac0.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/5.97cbd454ee60ebd9cac0.js.map",
+  "index.html": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/index.html"
 }
