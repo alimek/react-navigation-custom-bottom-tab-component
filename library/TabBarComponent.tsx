@@ -1,12 +1,23 @@
 import * as React from 'react';
-import { StyleSheet, Animated, TouchableWithoutFeedback, SafeAreaView, Easing, ViewStyle } from 'react-native';
-import { screenWidth } from './Layout';
+import {
+  StyleSheet,
+  Animated,
+  TouchableWithoutFeedback,
+  SafeAreaView,
+  Easing,
+  ViewStyle,
+  Dimensions,
+} from 'react-native';
+
 import { BackgroundContainer } from './components';
 
 enum PressTypes {
   IN = 'in',
   OUT = 'out',
 }
+
+const screenWidth = Dimensions.get('window').width;
+const tabBarHeight: number = 49;
 
 export interface OverwriteProps {
   activeTintColor?: string;
@@ -22,6 +33,8 @@ export interface OverwriteProps {
 }
 
 interface TabBarComponentProps {
+  duration: number;
+  tabBarHeight: number;
   allowFontScaling?: boolean;
   defaultFlexValue: number;
   activeFlexValue: number;
@@ -38,8 +51,6 @@ interface TabBarComponentProps {
 
 type Props = OverwriteProps & TabBarComponentProps;
 
-const tabBarHeight = 49;
-const duration = 200;
 
 class TabBarComponent extends React.Component<Props> {
   static defaultProps = {
@@ -48,6 +59,8 @@ class TabBarComponent extends React.Component<Props> {
     allowFontScaling: true,
     defaultFlexValue: 1,
     activeFlexValue: 2,
+    duration: 200,
+    tabBarHeight,
   };
 
   itemWidth: number;
@@ -80,7 +93,7 @@ class TabBarComponent extends React.Component<Props> {
   }
 
   navigateAnimation = (prevItemIndex: number) => {
-    const { navigation, defaultFlexValue, activeFlexValue } = this.props;
+    const { navigation, defaultFlexValue, activeFlexValue, duration } = this.props;
     const { state } = navigation;
 
     Animated.parallel([
@@ -106,7 +119,7 @@ class TabBarComponent extends React.Component<Props> {
     const { navigation, backgroundViewStyle, activeFlexValue } = this.props;
     const { state } = navigation;
     const { routes } = state;
-    const width = this.itemWidth * (activeFlexValue);
+    const width = this.itemWidth * activeFlexValue;
 
     const translateX = this.currentItem.interpolate({
       inputRange: routes.map((_route, index): number => index),
