@@ -5,6 +5,7 @@ import { View } from 'react-native';
 
 const MockedScreen = () => <View />;
 
+// @ts-ignore
 import { TabBarComponent } from '../library';
 
 const HomeStack = createStackNavigator({
