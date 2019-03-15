@@ -4,19 +4,16 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { View } from 'react-native';
 
 const MockedScreen = () => <View />;
-const withHeader = ({ title }: { title: string}) => (Component: any) => {
-  Component.navigationOptions = {
-    ...Component.navigationOptions,
-    title,
-  };
-
-  return Component;
-};
 
 import { TabBarComponent } from '../library';
 
 const HomeStack = createStackNavigator({
-  Dashboard: withHeader({ title: 'Dashboard' })(MockedScreen),
+  Dashboard: {
+    screen: MockedScreen,
+    navigationOptions: {
+      title: 'Dashboard',
+    },
+  },
 });
 
 HomeStack.navigationOptions = {
@@ -25,7 +22,12 @@ HomeStack.navigationOptions = {
 };
 
 const LinksStack = createStackNavigator({
-  Chat: withHeader({ title: 'Chat' })(MockedScreen),
+  Chat: {
+    screen: MockedScreen,
+    navigationOptions: {
+      title: 'Chat',
+    },
+  },
 });
 
 LinksStack.navigationOptions = {
@@ -34,7 +36,12 @@ LinksStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-  Search: withHeader({ title: 'Search' })(MockedScreen),
+  Search: {
+    screen: MockedScreen,
+    navigationOptions: {
+      title: 'Search',
+    },
+  },
 });
 
 SettingsStack.navigationOptions = {
@@ -43,7 +50,12 @@ SettingsStack.navigationOptions = {
 };
 
 const SettingsStack2 = createStackNavigator({
-  Profile: withHeader({ title: 'Profile' })(MockedScreen),
+  Profile: {
+    screen: MockedScreen,
+    navigationOptions: {
+      title: 'Profile',
+    },
+  },
 });
 
 SettingsStack2.navigationOptions = {
