@@ -5,6 +5,15 @@
     "jsx": "react-native",
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
-  }
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "declaration": true
+  },
+  "include": [
+    "library/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "navigation"
+  ]
 }

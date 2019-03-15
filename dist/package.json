@@ -1,0 +1,13 @@
+{
+  "name": "react-navigation-custom-bottom-tab-component",
+  "main": "index.js",
+  "version": "1.0.0",
+  "author": "Grzegorz Mandziak (alimek)",
+  "description": "ReactNavigation - Custom BottomTabComponent",
+  "license": "MIT",
+  "repository": "https://github.com/alimek/react-navigation-custom-bottom-tab-component",
+  "peerDependencies":  {
+    "react-native": "*",
+    "react-navigation": "^3.0.9"
+  }
+}
