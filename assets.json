@@ -1,15 +1,15 @@
 {
-  "vendors.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/vendors.8f9373e3.js",
-  "vendors.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/vendors.97cbd454ee60ebd9cac0.js.map",
-  "app.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/app.3f2f8ddb.js",
-  "app.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/app.97cbd454ee60ebd9cac0.js.map",
-  "index.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/index.2f615cbe.js",
-  "index.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/index.97cbd454ee60ebd9cac0.js.map",
-  "library-tab-bar-component.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.15754f9c.js",
-  "library-tab-bar-component.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.97cbd454ee60ebd9cac0.js.map",
-  "runtime~app.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/runtime~app.97cbd454ee60ebd9cac0.js",
-  "runtime~app.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/runtime~app.97cbd454ee60ebd9cac0.js.map",
-  "static/js/5.cecc34ff.js": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/5.cecc34ff.js",
-  "static/js/5.97cbd454ee60ebd9cac0.js.map": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/static/js/5.97cbd454ee60ebd9cac0.js.map",
-  "index.html": "https://github.com/alimek/react-navigation-custom-bottom-tab-component/index.html"
+  "vendors.js": "/react-navigation-custom-bottom-tab-component/static/js/vendors.1b48d12f.js",
+  "vendors.js.map": "/react-navigation-custom-bottom-tab-component/static/js/vendors.ac9f06b8ae08b2f21442.js.map",
+  "app.js": "/react-navigation-custom-bottom-tab-component/static/js/app.063051be.js",
+  "app.js.map": "/react-navigation-custom-bottom-tab-component/static/js/app.ac9f06b8ae08b2f21442.js.map",
+  "index.js": "/react-navigation-custom-bottom-tab-component/static/js/index.2f615cbe.js",
+  "index.js.map": "/react-navigation-custom-bottom-tab-component/static/js/index.ac9f06b8ae08b2f21442.js.map",
+  "library-tab-bar-component.js": "/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.15754f9c.js",
+  "library-tab-bar-component.js.map": "/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.ac9f06b8ae08b2f21442.js.map",
+  "runtime~app.js": "/react-navigation-custom-bottom-tab-component/static/js/runtime~app.ac9f06b8ae08b2f21442.js",
+  "runtime~app.js.map": "/react-navigation-custom-bottom-tab-component/static/js/runtime~app.ac9f06b8ae08b2f21442.js.map",
+  "static/js/5.cecc34ff.js": "/react-navigation-custom-bottom-tab-component/static/js/5.cecc34ff.js",
+  "static/js/5.ac9f06b8ae08b2f21442.js.map": "/react-navigation-custom-bottom-tab-component/static/js/5.ac9f06b8ae08b2f21442.js.map",
+  "index.html": "/react-navigation-custom-bottom-tab-component/index.html"
 }
