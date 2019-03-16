@@ -51,7 +51,6 @@ interface TabBarComponentProps {
 
 type Props = OverwriteProps & TabBarComponentProps;
 
-
 class TabBarComponent extends React.Component<Props> {
   static defaultProps = {
     onPressInScale: 1.3,
@@ -66,6 +65,7 @@ class TabBarComponent extends React.Component<Props> {
   itemWidth: number;
   itemWidthAnimations: Animated.Value[];
   pressAnimation: Animated.Value[];
+  textAnimation: Animated.Value[];
   currentItem: Animated.Value = new Animated.Value(0);
 
   constructor(props: Props) {
@@ -80,6 +80,7 @@ class TabBarComponent extends React.Component<Props> {
       (_route: any, index: number) => new Animated.Value(index === state.index ? activeFlexValue : defaultFlexValue),
     );
     this.pressAnimation = routes.map(() => new Animated.Value(1));
+    this.textAnimation = routes.map(() => new Animated.Value(state.index === 0 ? 1 : 0));
   }
 
   shouldComponentUpdate(nextProps: Readonly<Props>): boolean {
@@ -95,6 +96,7 @@ class TabBarComponent extends React.Component<Props> {
   navigateAnimation = (prevItemIndex: number) => {
     const { navigation, defaultFlexValue, activeFlexValue, duration } = this.props;
     const { state } = navigation;
+    const { routes } = state;
 
     Animated.parallel([
       Animated.timing(this.itemWidthAnimations[prevItemIndex], {
@@ -107,6 +109,11 @@ class TabBarComponent extends React.Component<Props> {
         duration,
         easing: Easing.linear,
       }),
+      ...routes.map((_route, index) => Animated.timing(this.textAnimation[index], {
+        toValue: prevItemIndex === index ? 0 : (state.index === index ? 1 : 0),
+        duration: duration * 1.2,
+        useNativeDriver: true,
+      })),
     ]).start();
 
     Animated.spring(this.currentItem, {
@@ -128,6 +135,7 @@ class TabBarComponent extends React.Component<Props> {
           return index * this.itemWidth;
         },
       ),
+      extrapolate: 'clamp',
     });
 
     return (
@@ -149,7 +157,7 @@ class TabBarComponent extends React.Component<Props> {
     );
   };
 
-  renderLabel = ({ focused, route }: { focused: boolean; route: any }) => {
+  renderLabel = ({ index, focused, route }: { index: number, focused: boolean; route: any }) => {
     const { getLabelText, navigation, activeTintColor, inactiveTintColor, allowFontScaling, labelStyle } = this.props;
     const { state } = navigation;
     const { routes } = state;
@@ -162,6 +170,13 @@ class TabBarComponent extends React.Component<Props> {
     const scale = this.currentItem.interpolate({
       inputRange: routes.map((_route, index): number => index),
       outputRange: routes.map((_route, index): number => (index === state.index ? 1 : 0.5)),
+      extrapolate: 'clamp',
+    });
+
+    const opacity = this.textAnimation[index].interpolate({
+      inputRange: [0.7, 1],
+      outputRange: [0, 1],
+      extrapolate: 'clamp',
     });
 
     return (
@@ -170,7 +185,7 @@ class TabBarComponent extends React.Component<Props> {
         style={[
           styles.text,
           labelStyle,
-          { color },
+          { color, opacity },
           {
             transform: [
               {
@@ -261,7 +276,7 @@ class TabBarComponent extends React.Component<Props> {
                   ]}
                 >
                   {this.renderIcon({ index: key, route, focused })}
-                  {this.renderLabel({ route, focused })}
+                  {this.renderLabel({ index: key, route, focused })}
                 </Animated.View>
               </Animated.View>
             </TouchableWithoutFeedback>
