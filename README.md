@@ -3,7 +3,7 @@ ReactNavigation - TabBarComponent with custom animation
 
 ## How it looks
 
-![iOS](https://gfycat.com/MemorableFairAlbino)
+![iOS](https://thumbs.gfycat.com/MemorableFairAlbino.webp)
 
 ## Documentation
 
