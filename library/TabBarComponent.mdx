@@ -1,9 +1,9 @@
 ---
 name: TabBarComponent
-menu: Components
+route: /
 ---
 
-import { PropsTable } from 'docz'
+import { PropsTable, Playground } from 'docz';
 import TabBarComponent from './TabBarComponent';
 
 # TabBottomComponent
@@ -12,14 +12,48 @@ import TabBarComponent from './TabBarComponent';
 
 <PropsTable of={TabBarComponent} />
 
-<TabBarComponent
-    navigation={{
-        state: {
-            routes: [
-                {},
-                {}
-            ],
-        }
-    }}
-    onTabPress={() => {}}
-/>
+## Usage
+
+Usage with default theme
+
+```
+import * as React from 'react';
+import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
+
+import { TabBarComponent } from 'react-navigation-custom-bottom-tab-component';
+
+const Navigation = createBottomTabNavigator(
+  {
+    HomeStack,
+    LinksStack,
+    SettingsStack,
+  },
+  {
+    tabBarComponent: TabBarComponent,
+  },
+);
+
+export default createAppContainer(Navigation);
+
+```
+
+If you would like to customize some styles you can do it by:
+
+```
+import { TabBarComponent, withCustomStyle } from 'react-navigation-custom-bottom-tab-component';
+
+const Navigation = createBottomTabNavigator(
+  {
+    HomeStack,
+    LinksStack,
+    SettingsStack,
+  },
+  {
+    tabBarComponent: withCustomStyle({
+        style: {
+            backgroundColor: 'red',
+        },
+    })(TabBarComponent),
+  },
+);
+```

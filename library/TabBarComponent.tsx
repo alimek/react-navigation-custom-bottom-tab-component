@@ -64,7 +64,7 @@ class TabBarComponent extends React.Component<Props> {
   itemWidthAnimations: Animated.Value[];
   pressAnimation: Animated.Value[];
   textAnimation: Animated.Value[];
-  currentItem: Animated.Value = new Animated.Value(0);
+  currentItem: Animated.Value;
 
   constructor(props: Props) {
     super(props);
@@ -73,6 +73,7 @@ class TabBarComponent extends React.Component<Props> {
     const { state } = navigation;
     const { routes } = state;
 
+    this.currentItem = new Animated.Value(state.index);
     this.itemWidth = screenWidth / (props.navigation.state.routes.length + (activeFlexValue - defaultFlexValue));
     this.itemWidthAnimations = routes.map(
       (_route: any, index: number) => new Animated.Value(index === state.index ? activeFlexValue : defaultFlexValue),
@@ -251,6 +252,7 @@ class TabBarComponent extends React.Component<Props> {
       <SafeAreaView style={[styles.container, style]}>
         {this.renderAnimatedBackground()}
         {routes.map((route, key) => {
+          console.log(route);
           const focused = key === state.index;
           return (
             <TouchableWithoutFeedback
