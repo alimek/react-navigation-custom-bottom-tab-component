@@ -1,9 +1,7 @@
-// @ts-ignore
-module.exports = {
-  get TabBarComponent() {
-    return require('./TabBarComponent').default;
-  },
-  get withCustomStyles() {
-    return require('./withCustomStyle').default;
-  }
+import TabBarComponent from './TabBarComponent';
+import withCustomStyle from './withCustomStyle';
+
+export {
+  TabBarComponent,
+  withCustomStyle,
 };

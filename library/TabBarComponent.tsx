@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavigationState } from 'react-navigation';
 import {
   StyleSheet,
   Animated,
@@ -17,7 +18,7 @@ enum PressTypes {
 }
 
 const screenWidth = Dimensions.get('window').width;
-const tabBarHeight: number = 49;
+const defaultTabBarHeight: number = 49;
 
 export interface OverwriteProps {
   activeTintColor?: string;
@@ -39,10 +40,7 @@ interface TabBarComponentProps {
   defaultFlexValue: number;
   activeFlexValue: number;
   navigation: {
-    state: {
-      routes: any[];
-      index: number;
-    };
+    state: NavigationState;
   };
   onTabPress: ({ route }: { route: any }) => void;
   renderIcon?: any;
@@ -59,7 +57,7 @@ class TabBarComponent extends React.Component<Props> {
     defaultFlexValue: 1,
     activeFlexValue: 2,
     duration: 200,
-    tabBarHeight,
+    tabBarHeight: defaultTabBarHeight,
   };
 
   itemWidth: number;
@@ -109,11 +107,13 @@ class TabBarComponent extends React.Component<Props> {
         duration,
         easing: Easing.linear,
       }),
-      ...routes.map((_route, index) => Animated.timing(this.textAnimation[index], {
-        toValue: prevItemIndex === index ? 0 : (state.index === index ? 1 : 0),
-        duration: duration * 1.2,
-        useNativeDriver: true,
-      })),
+      ...routes.map((_route, index) =>
+        Animated.timing(this.textAnimation[index], {
+          toValue: prevItemIndex === index ? 0 : state.index === index ? 1 : 0,
+          duration: duration * 1.2,
+          useNativeDriver: true,
+        }),
+      ),
     ]).start();
 
     Animated.spring(this.currentItem, {
@@ -123,7 +123,7 @@ class TabBarComponent extends React.Component<Props> {
   };
 
   renderAnimatedBackground = () => {
-    const { navigation, backgroundViewStyle, activeFlexValue } = this.props;
+    const { navigation, backgroundViewStyle, activeFlexValue, tabBarHeight } = this.props;
     const { state } = navigation;
     const { routes } = state;
     const width = this.itemWidth * activeFlexValue;
@@ -144,6 +144,7 @@ class TabBarComponent extends React.Component<Props> {
           styles.animatedBackground,
           {
             width,
+            height: tabBarHeight,
             transform: [
               {
                 translateX,
@@ -157,7 +158,7 @@ class TabBarComponent extends React.Component<Props> {
     );
   };
 
-  renderLabel = ({ index, focused, route }: { index: number, focused: boolean; route: any }) => {
+  renderLabel = ({ index, focused, route }: { index: number; focused: boolean; route: any }) => {
     const { getLabelText, navigation, activeTintColor, inactiveTintColor, allowFontScaling, labelStyle } = this.props;
     const { state } = navigation;
     const { routes } = state;
@@ -242,7 +243,7 @@ class TabBarComponent extends React.Component<Props> {
   };
 
   render() {
-    const { navigation, onTabPress, style } = this.props;
+    const { navigation, onTabPress, style, tabBarHeight } = this.props;
     const { state } = navigation;
     const { routes } = state;
 
@@ -259,10 +260,18 @@ class TabBarComponent extends React.Component<Props> {
               onPress={() => onTabPress({ route })}
               {...{ key }}
             >
-              <Animated.View style={[styles.tabBarContainer, { flex: this.itemWidthAnimations[key] }]}>
+              <Animated.View
+                style={[
+                  styles.tabBarContainer,
+                  {
+                    flex: this.itemWidthAnimations[key],
+                    height: tabBarHeight,
+                  },
+                ]}
+              >
                 <Animated.View
                   style={[
-                    styles.tabBarContainer,
+                    styles.tabBarContent,
                     {
                       transform: [
                         {
@@ -296,20 +305,22 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: 'rgba(0, 0, 0, .3)',
     flexDirection: 'row',
-    flexWrap: 'wrap',
   },
   tabBarContainer: {
     flex: 1,
     alignItems: 'center',
-    height: tabBarHeight,
+    paddingHorizontal: 5,
+  },
+  tabBarContent: {
+    flex: 1,
     flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: 5,
   },
   animatedBackground: {
     position: 'absolute',
     top: 0,
     left: 0,
-    height: tabBarHeight,
   },
   icon: {
     marginLeft: 10,

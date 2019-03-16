@@ -5,8 +5,7 @@ import { View } from 'react-native';
 
 const MockedScreen = () => <View />;
 
-// @ts-ignore
-import { TabBarComponent } from '../library';
+import { TabBarComponent, withCustomStyle } from '../library';
 
 const HomeStack = createStackNavigator({
   Dashboard: {
@@ -19,7 +18,9 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Dashboard',
-  tabBarIcon: () => <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: 'black' }} />,
+  tabBarIcon: ({ focused }: { focused: boolean }) => (
+    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
+  ),
 };
 
 const LinksStack = createStackNavigator({
@@ -33,7 +34,9 @@ const LinksStack = createStackNavigator({
 
 LinksStack.navigationOptions = {
   tabBarLabel: 'Chat',
-  tabBarIcon: () => <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: 'black' }} />,
+  tabBarIcon: ({ focused }: { focused: boolean }) => (
+    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
+  ),
 };
 
 const SettingsStack = createStackNavigator({
@@ -47,7 +50,9 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Search',
-  tabBarIcon: () => <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: 'black' }} />,
+  tabBarIcon: ({ focused }: { focused: boolean }) => (
+    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
+  ),
 };
 
 const SettingsStack2 = createStackNavigator({
@@ -62,7 +67,7 @@ const SettingsStack2 = createStackNavigator({
 SettingsStack2.navigationOptions = {
   tabBarLabel: 'Profile',
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <FontAwesome5 name="user" style={{ fontSize: 20, color: focused ? 'black' : 'red' }} />
+    <FontAwesome5 name="user" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
   ),
 };
 
@@ -74,7 +79,10 @@ const Navigation = createBottomTabNavigator(
     SettingsStack2,
   },
   {
-    tabBarComponent: TabBarComponent,
+    tabBarComponent: withCustomStyle({
+      defaultFlexValue: 1,
+      activeFlexValue: 2,
+    })(TabBarComponent),
   },
 );
 
