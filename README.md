@@ -28,8 +28,7 @@ $ npm install react-navigation-custom-bottom-tab-component --save
 Usage with default theme
 
 ```js
-import * as React from 'react';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
 
 import { TabBarComponent } from 'react-navigation-custom-bottom-tab-component';
 
@@ -47,6 +46,7 @@ export default createAppContainer(Navigation);
 If you would like to customize some styles you can do it by:
 
 ```js
+import { createBottomTabNavigator } from 'react-navigation';
 import { TabBarComponent, withCustomStyle } from 'react-navigation-custom-bottom-tab-component';
 
 const Navigation = createBottomTabNavigator(
