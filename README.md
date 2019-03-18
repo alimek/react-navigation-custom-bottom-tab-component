@@ -38,9 +38,6 @@ const Navigation = createBottomTabNavigator(
     tabBarComponent: TabBarComponent,
   },
 );
-
-export default createAppContainer(Navigation);
-
 ```
 
 If you would like to customize some styles you can do it by:
