@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OverwriteProps } from './TabBarComponent';
+import { OverwriteProps } from './FlexibleTabBarComponent';
 
 interface Any {
   defaultFlexValue?: number;

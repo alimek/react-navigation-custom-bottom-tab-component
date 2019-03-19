@@ -1,7 +1,7 @@
-import TabBarComponent from './TabBarComponent';
-import withCustomStyle from './withCustomStyle';
+import * as FlexibleTabBarComponent from './FlexibleTabBarComponent';
+import * as AnimatedCircleBarComponent from './AnimatedCircleBarComponent';
 
 export {
-  TabBarComponent,
-  withCustomStyle,
-};
+  FlexibleTabBarComponent,
+  AnimatedCircleBarComponent,
+}

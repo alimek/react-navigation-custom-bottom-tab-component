@@ -1,11 +1,21 @@
 import * as React from 'react';
-import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { View } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 
-const MockedScreen = () => <View />;
+const MockedScreen = ({ navigation }) => (
+  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <TouchableOpacity onPress={() => navigation.navigate('FlexibleTabBarNavigator')}>
+      <Text>Switch to FlexibleTabBarNavigator</Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate('AnimatedCircleNavigation')}>
+      <Text>Switch to AnimatedCircleNavigator</Text>
+    </TouchableOpacity>
+  </View>
+);
 
-import { TabBarComponent, withCustomStyle } from '../library';
+import { FlexibleTabBarComponent, withCustomStyle } from '../library/FlexibleTabBarComponent';
+import { AnimatedCircleNavigator } from '../library/AnimatedCircleBarComponent';
 
 const HomeStack = createStackNavigator({
   Dashboard: {
@@ -19,7 +29,7 @@ const HomeStack = createStackNavigator({
 HomeStack.navigationOptions = {
   tabBarLabel: 'Dashboard',
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
+    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'blue' : 'black' }} />
   ),
 };
 
@@ -35,7 +45,7 @@ const LinksStack = createStackNavigator({
 LinksStack.navigationOptions = {
   tabBarLabel: 'Chat',
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
+    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'blue' : 'black' }} />
   ),
 };
 
@@ -51,7 +61,7 @@ const SettingsStack = createStackNavigator({
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Search',
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
+    <FontAwesome5 name="comment-alt" style={{ fontSize: 20, color: focused ? 'blue' : 'black' }} />
   ),
 };
 
@@ -67,11 +77,11 @@ const SettingsStack2 = createStackNavigator({
 SettingsStack2.navigationOptions = {
   tabBarLabel: 'Profile',
   tabBarIcon: ({ focused }: { focused: boolean }) => (
-    <FontAwesome5 name="user" style={{ fontSize: 20, color: focused ? 'red' : 'black' }} />
+    <FontAwesome5 name="user" style={{ fontSize: 20, color: focused ? 'blue' : 'black' }} />
   ),
 };
 
-const Navigation = createBottomTabNavigator(
+const FlexibleTabBarNavigator = createBottomTabNavigator(
   {
     HomeStack,
     LinksStack,
@@ -82,8 +92,28 @@ const Navigation = createBottomTabNavigator(
     tabBarComponent: withCustomStyle({
       defaultFlexValue: 1,
       activeFlexValue: 2,
-    })(TabBarComponent),
+    })(FlexibleTabBarComponent),
   },
 );
 
-export default createAppContainer(Navigation);
+const AnimatedCircleNavigation = createBottomTabNavigator(
+  {
+    HomeStack,
+    LinksStack,
+    SettingsStack,
+    SettingsStack2,
+    SettingsStack3: SettingsStack2,
+  },
+  {
+    tabBarComponent: AnimatedCircleNavigator,
+  },
+);
+
+const Navigator = createSwitchNavigator({
+  FlexibleTabBarNavigator,
+  AnimatedCircleNavigation,
+}, {
+  initialRouteName: 'AnimatedCircleNavigation',
+});
+
+export default createAppContainer(Navigator);

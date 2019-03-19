@@ -1,16 +1,16 @@
 ---
-name: TabBarComponent
+name: FlexibleTabBarComponent
 route: /
 ---
 
 import { PropsTable, Playground } from 'docz';
-import TabBarComponent from './TabBarComponent';
+import FlexibleTabBarComponent from './FlexibleTabBarComponent';
 
-# TabBarComponent
+# FlexibleTabBarComponent
 
 ## Props
 
-<PropsTable of={TabBarComponent} />
+<PropsTable of={FlexibleTabBarComponent} />
 
 ## Usage
 
@@ -20,7 +20,7 @@ Usage with default theme
 import * as React from 'react';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 
-import { TabBarComponent } from 'react-navigation-custom-bottom-tab-component';
+import { FlexibleTabBarComponent } from 'react-navigation-custom-bottom-tab-component';
 
 const Navigation = createBottomTabNavigator(
   {
@@ -29,7 +29,7 @@ const Navigation = createBottomTabNavigator(
     SettingsStack,
   },
   {
-    tabBarComponent: TabBarComponent,
+    tabBarComponent: FlexibleTabBarComponent,
   },
 );
 
@@ -40,7 +40,7 @@ export default createAppContainer(Navigation);
 If you would like to customize some styles you can do it by:
 
 ```
-import { TabBarComponent, withCustomStyle } from 'react-navigation-custom-bottom-tab-component';
+import { FlexibleTabBarComponent, withCustomStyle } from 'react-navigation-custom-bottom-tab-component/FlexibleTabBarComponent';
 
 const Navigation = createBottomTabNavigator(
   {
@@ -53,7 +53,7 @@ const Navigation = createBottomTabNavigator(
         style: {
             backgroundColor: 'red',
         },
-    })(TabBarComponent),
+    })(FlexibleTabBarComponent),
   },
 );
 ```

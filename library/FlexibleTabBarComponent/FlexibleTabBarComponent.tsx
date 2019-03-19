@@ -10,7 +10,7 @@ import {
   Dimensions,
 } from 'react-native';
 
-import { BackgroundContainer } from './components';
+import { BackgroundContainer } from '../components';
 
 enum PressTypes {
   IN = 'in',
@@ -49,7 +49,7 @@ interface TabBarComponentProps {
 
 type Props = OverwriteProps & TabBarComponentProps;
 
-class TabBarComponent extends React.Component<Props> {
+class FlexibleTabBarComponent extends React.Component<Props> {
   static defaultProps = {
     onPressInScale: 1.3,
     onPressOutScale: 1,
@@ -298,7 +298,7 @@ class TabBarComponent extends React.Component<Props> {
   }
 }
 
-export default TabBarComponent;
+export default FlexibleTabBarComponent;
 
 const styles = StyleSheet.create({
   container: {
