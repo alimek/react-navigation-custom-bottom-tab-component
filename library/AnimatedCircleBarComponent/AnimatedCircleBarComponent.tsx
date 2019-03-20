@@ -52,7 +52,7 @@ const platformZeroPoint = Platform.select({
   android: 1,
 });
 
-class AnimatedCircleNavigator extends React.Component<Props, State> {
+class AnimatedCircleBarComponent extends React.Component<Props, State> {
   currentIndexAnimatedValue: Animated.Value;
   itemsAnimation: Animated.Value[];
   data: { x: number; y: number }[];
@@ -309,7 +309,7 @@ class AnimatedCircleNavigator extends React.Component<Props, State> {
   }
 }
 
-export default AnimatedCircleNavigator;
+export default AnimatedCircleBarComponent;
 
 const styles = StyleSheet.create({
   container: {

@@ -10,9 +10,11 @@ Providing few solution for Bottom Navigation.
 
 It works both on iOS and Android!
 
-FlexibleTabBarComponent iOS Preview:
+|FlexibleTabBarComponent|AnimatedCircleBarComponent|
+|---------|--------------|
+|![iOS](https://thumbs.gfycat.com/AdorableCelebratedLemur.webp=100x200)||
 
-![iOS](https://thumbs.gfycat.com/AdorableCelebratedLemur.webp)
+
 
 ## Installation and usage
 

@@ -1,5 +1,5 @@
-import AnimatedCircleNavigator from './AnimatedCircleNavigator';
+import AnimatedCircleBarComponent from './AnimatedCircleBarComponent';
 
 export {
-  AnimatedCircleNavigator,
+  AnimatedCircleBarComponent,
 }

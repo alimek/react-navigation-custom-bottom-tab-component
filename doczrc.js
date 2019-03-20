@@ -1,7 +1,7 @@
 import json from './package.json';
 
 export default {
-  title: 'TabBarComponent',
+  title: 'Version 1.1.0',
   native: true,
   typescript: true,
   codeSandbox: false,

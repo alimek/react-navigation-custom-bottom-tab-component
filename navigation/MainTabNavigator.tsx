@@ -15,7 +15,7 @@ const MockedScreen = ({ navigation }: any) => (
 );
 
 import { FlexibleTabBarComponent, withCustomStyle } from '../library/FlexibleTabBarComponent';
-import { AnimatedCircleNavigator } from '../library/AnimatedCircleBarComponent';
+import { AnimatedCircleBarComponent } from '../library/AnimatedCircleBarComponent';
 
 const HomeStack = createStackNavigator({
   Dashboard: {
@@ -105,7 +105,7 @@ const AnimatedCircleNavigation = createBottomTabNavigator(
     SettingsStack3: SettingsStack2,
   },
   {
-    tabBarComponent: AnimatedCircleNavigator,
+    tabBarComponent: AnimatedCircleBarComponent,
   },
 );
 
