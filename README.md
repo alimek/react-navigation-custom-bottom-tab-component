@@ -12,7 +12,7 @@ It works both on iOS and Android!
 
 |FlexibleTabBarComponent|AnimatedCircleBarComponent|
 |---------|--------------|
-|![iOS](https://thumbs.gfycat.com/AdorableCelebratedLemur.webp=100x200)||
+|![iOS](https://thumbs.gfycat.com/AdorableCelebratedLemur.webp =100x200)||
 
 
 
