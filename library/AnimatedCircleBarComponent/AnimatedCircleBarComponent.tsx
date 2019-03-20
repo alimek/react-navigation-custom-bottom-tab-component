@@ -138,10 +138,10 @@ class AnimatedCircleBarComponent extends React.Component<Props, State> {
     );
   };
 
-  renderIcon = (props: { index: number; route: any; focused: boolean }): React.ReactNode => {
+  renderIcon = (props: { index: number; route: any; focused: boolean, forceRender?: boolean }): React.ReactNode => {
     const { renderIcon } = this.props;
 
-    if (props.focused) {
+    if (!props.forceRender && props.focused) {
       return null;
     }
 
@@ -258,7 +258,8 @@ class AnimatedCircleBarComponent extends React.Component<Props, State> {
             {this.renderIcon({
               index: previousIndex,
               route: routes[previousIndex],
-              focused: false,
+              focused: true,
+              forceRender: true,
             })}
           </Animated.View>
         ) : null}
@@ -276,7 +277,8 @@ class AnimatedCircleBarComponent extends React.Component<Props, State> {
           {this.renderIcon({
             index: state.index,
             route: routes[state.index],
-            focused: false,
+            focused: true,
+            forceRender: true,
           })}
         </Animated.View>
       </Animated.View>
