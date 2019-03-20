@@ -1,11 +1,16 @@
 # react-navigation-custom-bottom-tab-component
 ReactNavigation - TabBarComponent with custom animation
 
+Providing few solution for Bottom Navigation.
+
+* FlexibleTabBarComponent
+* AnimatedCircleBarComponent
+
 ## How it looks
 
 It works both on iOS and Android!
 
-iOS Preview:
+FlexibleTabBarComponent iOS Preview:
 
 ![iOS](https://thumbs.gfycat.com/AdorableCelebratedLemur.webp)
 
@@ -30,7 +35,7 @@ Usage with default theme
 ```js
 import { createBottomTabNavigator } from 'react-navigation';
 
-import { TabBarComponent } from 'react-navigation-custom-bottom-tab-component';
+import { TabBarComponent } from 'react-navigation-custom-bottom-tab-component/FlexibleTabBarComponent';
 
 const Navigation = createBottomTabNavigator(
   bottomTabNavigatorRouteConfig,
@@ -44,7 +49,7 @@ If you would like to customize some styles you can do it by:
 
 ```js
 import { createBottomTabNavigator } from 'react-navigation';
-import { TabBarComponent, withCustomStyle } from 'react-navigation-custom-bottom-tab-component';
+import { TabBarComponent, withCustomStyle } from 'react-navigation-custom-bottom-tab-component/FlexibleTabBarComponent';
 
 const Navigation = createBottomTabNavigator(
   bottomTabNavigatorRouteConfig,

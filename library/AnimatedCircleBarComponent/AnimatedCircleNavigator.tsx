@@ -7,7 +7,7 @@ import {
   ViewStyle,
   Animated,
   Dimensions,
-  Easing,
+  Easing, Platform,
 } from 'react-native';
 import { NavigationState } from 'react-navigation';
 import { Svg, Path } from 'react-native-svg';
@@ -47,6 +47,11 @@ const line: any = shape
   .y((d: any) => d.y)
   .curve(shape.curveBasis);
 
+const platformZeroPoint = Platform.select({
+  ios: 0,
+  android: 1,
+});
+
 class AnimatedCircleNavigator extends React.Component<Props, State> {
   currentIndexAnimatedValue: Animated.Value;
   itemsAnimation: Animated.Value[];
@@ -67,11 +72,11 @@ class AnimatedCircleNavigator extends React.Component<Props, State> {
     this.itemsAnimation = routes.map((_route, index) => new Animated.Value(state.index === index ? 0 : 1));
 
     this.data = [
-      { x: 0, y: 0 },
-      { x: 10, y: 0 },
+      { x: 0, y: platformZeroPoint },
+      { x: 10, y: platformZeroPoint },
       { x: screenWidth / (routes.length * 2), y: 20 },
-      { x: screenWidth / routes.length - 10, y: 0 },
-      { x: screenWidth / routes.length, y: 0 },
+      { x: screenWidth / routes.length - 10, y: platformZeroPoint },
+      { x: screenWidth / routes.length, y: platformZeroPoint },
     ];
   }
 
@@ -176,7 +181,7 @@ class AnimatedCircleNavigator extends React.Component<Props, State> {
           width={screenWidth / routes.length}
           height={height}
           style={{
-            top: -height,
+            top: -(height - platformZeroPoint),
             transform: [
               {
                 rotate: '180deg',

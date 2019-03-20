@@ -3,7 +3,7 @@ import { createAppContainer, createStackNavigator, createBottomTabNavigator, cre
 import { FontAwesome5 } from '@expo/vector-icons';
 import { View, TouchableOpacity, Text } from 'react-native';
 
-const MockedScreen = ({ navigation }) => (
+const MockedScreen = ({ navigation }: any) => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
     <TouchableOpacity onPress={() => navigation.navigate('FlexibleTabBarNavigator')}>
       <Text>Switch to FlexibleTabBarNavigator</Text>
