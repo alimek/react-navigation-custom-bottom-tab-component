@@ -1,7 +1,7 @@
-import json from './package.json';
+import json from './dist/package.json';
 
 export default {
-  title: 'Version 1.1.0',
+  title: `Version ${json.version}`,
   native: true,
   typescript: true,
   codeSandbox: false,
