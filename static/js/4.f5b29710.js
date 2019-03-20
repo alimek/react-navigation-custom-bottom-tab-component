@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"./.docz/app/imports.js":function(n,r,o){"use strict";o.r(r),o.d(r,"imports",function(){return i});var i={"library/TabBarComponent.mdx":function(){return Promise.all([o.e(0),o.e(2)]).then(o.bind(null,"./library/TabBarComponent.mdx"))}}}},0,[0,2]]);
-//# sourceMappingURL=4.3528f0277aa01e9f7925.js.map

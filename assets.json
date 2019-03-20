@@ -1,13 +1,17 @@
 {
-  "vendors.js": "/react-navigation-custom-bottom-tab-component/static/js/vendors.932758d1.js",
-  "vendors.js.map": "/react-navigation-custom-bottom-tab-component/static/js/vendors.3528f0277aa01e9f7925.js.map",
-  "app.js": "/react-navigation-custom-bottom-tab-component/static/js/app.51607869.js",
-  "app.js.map": "/react-navigation-custom-bottom-tab-component/static/js/app.3528f0277aa01e9f7925.js.map",
-  "library-tab-bar-component.js": "/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.bb71ab72.js",
-  "library-tab-bar-component.js.map": "/react-navigation-custom-bottom-tab-component/static/js/library-tab-bar-component.3528f0277aa01e9f7925.js.map",
-  "runtime~app.js": "/react-navigation-custom-bottom-tab-component/static/js/runtime~app.3528f0277aa01e9f7925.js",
-  "runtime~app.js.map": "/react-navigation-custom-bottom-tab-component/static/js/runtime~app.3528f0277aa01e9f7925.js.map",
-  "static/js/4.f5b29710.js": "/react-navigation-custom-bottom-tab-component/static/js/4.f5b29710.js",
-  "static/js/4.3528f0277aa01e9f7925.js.map": "/react-navigation-custom-bottom-tab-component/static/js/4.3528f0277aa01e9f7925.js.map",
-  "index.html": "/react-navigation-custom-bottom-tab-component/index.html"
+  "vendors.js": "/react-navigation-custom-bottom-tab-component-lib/static/js/vendors.8b1d949c.js",
+  "vendors.js.map": "/react-navigation-custom-bottom-tab-component-lib/static/js/vendors.cb33406a5995fc587bde.js.map",
+  "app.js": "/react-navigation-custom-bottom-tab-component-lib/static/js/app.51ce7363.js",
+  "app.js.map": "/react-navigation-custom-bottom-tab-component-lib/static/js/app.cb33406a5995fc587bde.js.map",
+  "index.js": "/react-navigation-custom-bottom-tab-component-lib/static/js/index.a4566106.js",
+  "index.js.map": "/react-navigation-custom-bottom-tab-component-lib/static/js/index.cb33406a5995fc587bde.js.map",
+  "library-animated-circle-bar-component-animated-circle-bar-component.js": "/react-navigation-custom-bottom-tab-component-lib/static/js/library-animated-circle-bar-component-animated-circle-bar-component.91b6957f.js",
+  "library-animated-circle-bar-component-animated-circle-bar-component.js.map": "/react-navigation-custom-bottom-tab-component-lib/static/js/library-animated-circle-bar-component-animated-circle-bar-component.cb33406a5995fc587bde.js.map",
+  "library-flexible-tab-bar-component-flexible-tab-bar-component.js": "/react-navigation-custom-bottom-tab-component-lib/static/js/library-flexible-tab-bar-component-flexible-tab-bar-component.5a45578a.js",
+  "library-flexible-tab-bar-component-flexible-tab-bar-component.js.map": "/react-navigation-custom-bottom-tab-component-lib/static/js/library-flexible-tab-bar-component-flexible-tab-bar-component.cb33406a5995fc587bde.js.map",
+  "runtime~app.js": "/react-navigation-custom-bottom-tab-component-lib/static/js/runtime~app.cb33406a5995fc587bde.js",
+  "runtime~app.js.map": "/react-navigation-custom-bottom-tab-component-lib/static/js/runtime~app.cb33406a5995fc587bde.js.map",
+  "static/js/6.1792112e.js": "/react-navigation-custom-bottom-tab-component-lib/static/js/6.1792112e.js",
+  "static/js/6.cb33406a5995fc587bde.js.map": "/react-navigation-custom-bottom-tab-component-lib/static/js/6.cb33406a5995fc587bde.js.map",
+  "index.html": "/react-navigation-custom-bottom-tab-component-lib/index.html"
 }
