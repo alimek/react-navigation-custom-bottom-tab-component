@@ -30,41 +30,6 @@ or
 $ npm install react-navigation-custom-bottom-tab-component --save
 ```
 
-### Usage
-
-Usage with default theme
-
-```js
-import { createBottomTabNavigator } from 'react-navigation';
-
-import { TabBarComponent } from 'react-navigation-custom-bottom-tab-component/FlexibleTabBarComponent';
-
-const Navigation = createBottomTabNavigator(
-  bottomTabNavigatorRouteConfig,
-  {
-    tabBarComponent: TabBarComponent,
-  },
-);
-```
-
-If you would like to customize some styles you can do it by:
-
-```js
-import { createBottomTabNavigator } from 'react-navigation';
-import { TabBarComponent, withCustomStyle } from 'react-navigation-custom-bottom-tab-component/FlexibleTabBarComponent';
-
-const Navigation = createBottomTabNavigator(
-  bottomTabNavigatorRouteConfig,
-  {
-    tabBarComponent: withCustomStyle({
-        style: {
-            backgroundColor: 'red',
-        },
-    })(TabBarComponent),
-  },
-);
-```
-
 ## Documentation
 
 [See documentation](https://alimek.github.io/react-navigation-custom-bottom-tab-component/)
