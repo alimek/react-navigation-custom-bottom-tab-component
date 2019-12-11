@@ -1,6 +1,6 @@
 {
   "name": "react-navigation-custom-bottom-tab-component-lib",
-  "homepage": "https://alimek.github.com/react-navigation-custom-bottom-tab-component/",
+  "homepage": "https://hcalderon73.github.com/react-navigation-custom-bottom-tab-component/",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
