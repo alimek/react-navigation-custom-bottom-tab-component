@@ -30,7 +30,7 @@ export interface OverwriteProps {
   backgroundViewStyle?: ViewStyle;
   tintColor?: string;
   onPressInScale?: number;
-  onPressOutScale?: number;
+  onPressOutScale?: number; 
 }
 
 interface TabBarComponentProps {
@@ -45,6 +45,7 @@ interface TabBarComponentProps {
   onTabPress: ({ route }: { route: any }) => void;
   renderIcon?: any;
   getLabelText: (props: { route: any }) => any;
+  testID: string;
 }
 
 type Props = OverwriteProps & TabBarComponentProps;
@@ -160,7 +161,7 @@ class FlexibleTabBarComponent extends React.Component<Props> {
   };
 
   renderLabel = ({ index, focused, route }: { index: number; focused: boolean; route: any }) => {
-    const { getLabelText, navigation, activeTintColor, inactiveTintColor, allowFontScaling, labelStyle } = this.props;
+    const { getLabelText, navigation, activeTintColor, inactiveTintColor, allowFontScaling, labelStyle, testID } = this.props;
     const { state } = navigation;
     const { routes } = state;
 
