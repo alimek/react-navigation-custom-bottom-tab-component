@@ -2,7 +2,7 @@
   "name": "react-navigation-custom-bottom-tab-component",
   "homepage": "https://alimek.github.com/react-navigation-custom-bottom-tab-component/",
   "main": "node_modules/expo/AppEntry.js",
-  "version": "0.0.1",
+  "version": "1.1.2",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
