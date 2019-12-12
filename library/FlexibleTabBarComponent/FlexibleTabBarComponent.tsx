@@ -44,7 +44,9 @@ interface TabBarComponentProps {
   };
   onTabPress: ({ route }: { route: any }) => void;
   renderIcon?: any;
+  setTestID?: (props: { route: any }) => string;
   getLabelText: (props: { route: any }) => any;
+  testID?: string;
 }
 
 type Props = OverwriteProps & TabBarComponentProps;
@@ -93,6 +95,7 @@ class FlexibleTabBarComponent extends React.Component<Props> {
   }
 
   navigateAnimation = (prevItemIndex: number) => {
+
     const { navigation, defaultFlexValue, activeFlexValue, duration } = this.props;
     const { state } = navigation;
     const { routes } = state;
@@ -226,6 +229,10 @@ class FlexibleTabBarComponent extends React.Component<Props> {
       </Animated.View>
     );
   };
+  setTestID = (props: { route: any }): string => {
+    return 'tab-' + props.route.key;
+  };
+
 
   onPress = ({ index, type }: { index: number; type: PressTypes }) => {
     const { onPressInScale, onPressOutScale, navigation } = this.props;
@@ -248,19 +255,21 @@ class FlexibleTabBarComponent extends React.Component<Props> {
     const { state } = navigation;
     const { routes } = state;
 
+
     return (
       <SafeAreaView style={[styles.container, style]}>
         {this.renderAnimatedBackground()}
         {routes.map((route, key) => {
-          console.log(route);
           const focused = key === state.index;
           return (
             <TouchableWithoutFeedback
+              testID={this.setTestID({ route })}
               delayPressIn={200}
               onPressIn={() => this.onPress({ index: key, type: PressTypes.IN })}
               onPressOut={() => this.onPress({ index: key, type: PressTypes.OUT })}
               onPress={() => onTabPress({ route })}
               {...{ key }}
+
             >
               <Animated.View
                 style={[
