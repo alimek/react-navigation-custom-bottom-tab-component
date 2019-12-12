@@ -5,7 +5,7 @@
   "author": "Grzegorz Mandziak (alimek)",
   "description": "ReactNavigation - Custom BottomTabComponent",
   "license": "MIT",
-  "repository": "https://github.com/hcalderon73/react-navigation-custom-bottom-tab-component",
+  "repository": "https://github.com/alimek/react-navigation-custom-bottom-tab-component",
   "peerDependencies":  {
     "react-native": "*",
     "react-navigation": "^3.0.9"
