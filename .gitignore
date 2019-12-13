@@ -2,6 +2,6 @@
 .expo
 node_modules
 .git
-dist/
+!dist/
 !/dist/package.json
 .docz
