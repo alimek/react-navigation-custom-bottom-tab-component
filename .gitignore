@@ -1,6 +1,6 @@
 .idea/
 .expo
 node_modules
-dist/
+.git
 !/dist/package.json
 .docz
